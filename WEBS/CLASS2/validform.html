@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+</head>
+<body>
+    <center>
+    <h2 align="center">Form Validation</h2>
+    <form action="formvalidate.jsp" name="form" method="post">
+        <center>
+            <table align="center" width="40%" style="font-size: 18px">
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name" name="name" placeholder="enter your name"></td>
+                    <td><span id="nameError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">Date of Birth:</label></td>
+                    <td><input type="date" id="dob" name="dob" ></td>
+                    <td><span id="dobError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" id="password" name="password" placeholder="password"></td>
+                    <td><span id="passwordError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="cpassword">Confirm password:</label></td>
+                    <td><input type="password" id="cpassword" name="cpassword" placeholder="confirm password"></td>
+                    <td><span id="cpasswordError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email" placeholder="enter your email"></td>
+                    <td><span id="emailError" class="error"></span></td>
+                </tr>
+                <tr>
+                    <td><label for="number">Mobile No:</label></td>
+                    <td><input type="text" id="number" name="number" placeholder="enter your number"></td>
+                    <td><span id="numberError" class="error"></span></td>
+                </tr>
+            </table>
+            
+        </center>
+        <input type="submit" value="Submit" onclick="f1()">
+    </form>
+
+    <script>
+        function f1(){
+            var p1 = document.form.password.value;
+            var p2 = document.form.cpassword.value;
+            if(p1!=p2){
+                alert("Password missmatched, Please check.")
+            }
+            else if(p1.length<8){
+                alert("Password should be atleast 8 characters.")
+            }
+            else{
+                document.form.submit();
+            }
+        }
+    </script>
+    </center>
+</body>
+</html>
